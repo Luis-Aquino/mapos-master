@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/table-custom.css" />
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.mask.min.js"></script>
 
 <div class="span12" style="margin-left: 0">
     <form method="get" action="<?php echo base_url(); ?>index.php/os/gerenciar">
@@ -15,7 +16,17 @@
         <div class="span3">
             <input type="text" name="pesquisa" id="pesquisa" placeholder="Nome do cliente a pesquisar" class="span12" value="">
         </div>
+        <div class="span3">
+            <input type="text" name="data" autocomplete="off" id="data" placeholder="Data Inicial" class="span6 datepicker" value="">
+            <input type="text" name="data2" autocomplete="off" id="data2" placeholder="Data Final" class="span6 datepicker" value="">
+        </div>
+        <div class="span1">
+            <input type="text" name="placa" id="placa" placeholder="Placa" class="span12" value="">
+        </div>
         <div class="span2">
+            <input type="text" name="modelo" id="modelo" placeholder="modelo" class="span12" value="">
+        </div>
+        <div class="span2"  style="margin-left: 0">
             <select name="status[]" id="status" class="span12" multiple>
                 <option value="">Selecione status</option>
                 <option value="Aberto">Aberto</option>
@@ -29,11 +40,6 @@
                 <option value="Aprovado">Aprovado</option>
             </select>
 
-        </div>
-
-        <div class="span3">
-            <input type="text" name="data" autocomplete="off" id="data" placeholder="Data Inicial" class="span6 datepicker" value="">
-            <input type="text" name="data2" autocomplete="off" id="data2" placeholder="Data Final" class="span6 datepicker" value="">
         </div>
         <div class="span1">
             <button class="span12 btn"><i class="fas fa-search"></i></button>
@@ -216,6 +222,20 @@
         });
         $(".datepicker").datepicker({
             dateFormat: 'dd/mm/yy'
+        });
+        $('#placa').mask('SSS-0000', {
+            translation: {
+                'S': { pattern: /[A-Za-z]/ },
+                '0': { pattern: /[0-9]/ }
+            }
+        });
+        $('#placa').on('input', function () {
+            this.value = this.value.toUpperCase();
+        });
+        // Máscara para quilometragem com separador de milhar (ex: 123.456)
+        $('#km').mask('000.000', {reverse: true});
+        $('.editor').trumbowyg({
+            lang: 'pt_br'
         });
     });
 </script>

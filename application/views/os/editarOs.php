@@ -130,7 +130,7 @@
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         
                                         <div class="span2">
-                                            <label for="modelo">Modelo<span></span></label>
+                                            <label for="modelo">Modelo<span class="required">*</span></label>
                                             <input id="modelo" class="span12" type="text" name="modelo" value="<?php echo $result->modelo ?>" />
                                         </div>
                                         <div class="span1">
@@ -1080,7 +1080,7 @@
             this.value = this.value.toUpperCase();
         });
         // Máscara para quilometragem com separador de milhar (ex: 123.456)
-        $('#km').mask('000.000.000', {reverse: true});
+        $('#km').mask('000.000', {reverse: true});
         $('.editor').trumbowyg({
             lang: 'pt_br'
         });

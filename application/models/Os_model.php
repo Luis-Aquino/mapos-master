@@ -60,6 +60,15 @@ class Os_model extends CI_Model
 
         // condicionais da pesquisa
 
+        // condicional de placa
+        if (array_key_exists('placa', $where)) {
+            $this->db->like('os.placa', $where['placa']);
+        }
+        // condicional de modelo
+        if (array_key_exists('modelo', $where)) {
+            $this->db->like('os.modelo', $where['modelo']);
+        }
+
         // condicional de status
         if (array_key_exists('status', $where)) {
             $this->db->where_in('status', $where['status']);

@@ -34,7 +34,15 @@ class Os extends MY_Controller
         $status = $this->input->get('status');
         $de = $this->input->get('data');
         $ate = $this->input->get('data2');
+        $placa = $this->input->get('placa');
+        $modelo = $this->input->get('modelo');
 
+        if ($placa) {
+            $where_array['placa'] = $placa;
+        }
+        if ($modelo) {
+            $where_array['modelo'] = $modelo;
+        }
         if ($pesquisa) {
             $where_array['pesquisa'] = $pesquisa;
         }
