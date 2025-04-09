@@ -56,6 +56,9 @@
                         <th>N° OS</th>
                         <th>Cliente</th>
                         <th>Responsável</th>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Km</th>
                         <th>Data Inicial</th>
                         <th>Data Final</th>
                         <th>Venc. Garantia</th>
@@ -130,6 +133,9 @@
                         echo '<td>' . $r->idOs . '</td>';
                         echo '<td><a href="' . base_url() . 'index.php/clientes/visualizar/' . $r->idClientes . '" style="margin-right: 1%">' .$r->nomeCliente. '</a></td>';
                         echo '<td>' . $r->nome . '</td>';
+                        echo '<td>' . $r->modelo . '</td>';
+                        echo '<td>' . $r->placa . '</td>';
+                        echo '<td>' . $r->km . '</td>';
                         echo '<td>' . $dataInicial . '</td>';
                         echo '<td>' . $dataFinal . '</td>';
                         echo '<td>' . $vencGarantia . '</td>';

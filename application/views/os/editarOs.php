@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/trumbowyg/ui/trumbowyg.css">
 <script type="text/javascript" src="<?php echo base_url() ?>assets/trumbowyg/trumbowyg.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/trumbowyg/langs/pt_br.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.mask.min.js"></script>
 
 <style>
     .ui-datepicker {
@@ -79,13 +80,11 @@
                                             <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="<?php echo $result->clientes_id ?>" />
                                             <input id="valorTotal" type="hidden" name="valorTotal" value="" />
                                         </div>
-                                        <div class="span6">
+                                        <div class="span3">
                                             <label for="tecnico">Técnico / Responsável<span class="required">*</span></label>
                                             <input id="tecnico" class="span12" type="text" name="tecnico" value="<?php echo $result->nome ?>" />
                                             <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value="<?php echo $result->usuarios_id ?>" />
                                         </div>
-                                    </div>
-                                    <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span3">
                                             <label for="status">Status<span class="required">*</span></label>
                                             <select class="span12" name="status" id="status" value="">
@@ -127,18 +126,35 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="span3">
+                                    </div>
+                                    <div class="span12" style="padding: 1%; margin-left: 0">
+                                        
+                                        <div class="span2">
+                                            <label for="modelo">Modelo<span></span></label>
+                                            <input id="modelo" class="span12" type="text" name="modelo" value="<?php echo $result->modelo ?>" />
+                                        </div>
+                                        <div class="span1">
+                                            <label for="placa">Placa<span></span></label>
+                                            <input id="placa" class="span12" type="text" name="placa" value="<?php echo $result->placa ?>" />
+                                        </div>
+                                        <div class="span2">
+                                            <label for="km">(KM)Quilometragem<span></span></label>
+                                            <input id="km" class="span12" type="text" name="km" value="<?php echo $result->km ?>"/>
+                                        </div>
+                                        <div class="span1">
                                             <label for="dataInicial">Data Inicial<span class="required">*</span></label>
                                             <input id="dataInicial" autocomplete="off" class="span12 datepicker" type="text" name="dataInicial" value="<?php echo date('d/m/Y', strtotime($result->dataInicial)); ?>" />
                                         </div>
-                                        <div class="span3">
+                                        <div class="span1">
                                             <label for="dataFinal">Data Final<span class="required">*</span></label>
                                             <input id="dataFinal" autocomplete="off" class="span12 datepicker" type="text" name="dataFinal" value="<?php echo date('d/m/Y', strtotime($result->dataFinal)); ?>" />
                                         </div>
-                                        <div class="span3">
-                                            <label for="garantia">Garantia (dias)</label>
+                                        <div class="span1">
+                                        <label for="garantia">Garantia (dias)</label>
                                             <input id="garantia" type="number" min="0" max="9999" class="span12" name="garantia" value="<?php echo $result->garantia ?>" />
                                             <?php echo form_error('garantia'); ?>
+                                        </div>
+                                        <div class="span4">
                                             <label for="termoGarantia">Termo Garantia</label>
                                             <input id="termoGarantia" class="span12" type="text" name="termoGarantia" value="<?php echo $result->refGarantia ?>" />
                                             <input id="garantias_id" class="span12" type="hidden" name="garantias_id" value="<?php echo $result->garantias_id ?>" />
@@ -1051,6 +1067,20 @@
             dateFormat: 'dd/mm/yy'
         });
 
+        $('.editor').trumbowyg({
+            lang: 'pt_br'
+        });
+        $('#placa').mask('SSS-0000', {
+            translation: {
+                'S': { pattern: /[A-Za-z]/ },
+                '0': { pattern: /[0-9]/ }
+            }
+        });
+        $('#placa').on('input', function () {
+            this.value = this.value.toUpperCase();
+        });
+        // Máscara para quilometragem com separador de milhar (ex: 123.456)
+        $('#km').mask('000.000.000', {reverse: true});
         $('.editor').trumbowyg({
             lang: 'pt_br'
         });

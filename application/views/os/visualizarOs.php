@@ -96,6 +96,19 @@
                                     </ul>
                                 </td>
                             </tr>
+                            <tr>
+                                <td style="width: 50%; padding-left: 0">
+                                    <ul>
+                                        <li>
+                                                <span>
+                                                    <h5><b>Veículo</b></h5>
+                                                    <span>Modelo: <?php echo $result->modelo ?></span><br>
+                                                    <span>Placa: <?php echo $result->placa ?></span><br>
+                                                    <span>Km Atual: <?php echo $result->km ?></span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
 

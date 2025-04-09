@@ -124,6 +124,9 @@ class Os extends MY_Controller
                 'observacoes' => set_value('observacoes'),
                 'laudoTecnico' => set_value('laudoTecnico'),
                 'faturado' => 0,
+                'km' => $this->input->post('km'),
+                'placa' => $this->input->post('placa'),
+                'modelo' => $this->input->post('modelo')
             ];
 
             if (is_numeric($id = $this->os_model->add('os', $data, true))) {
@@ -215,6 +218,9 @@ class Os extends MY_Controller
             $data = [
                 'dataInicial' => $dataInicial,
                 'dataFinal' => $dataFinal,
+                'km' => $this->input->post('km'),
+                'placa' => $this->input->post('placa'),
+                'modelo' => $this->input->post('modelo'),
                 'garantia' => $this->input->post('garantia'),
                 'garantias_id' => $termoGarantiaId,
                 'descricaoProduto' => $this->input->post('descricaoProduto'),

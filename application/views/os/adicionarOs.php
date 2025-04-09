@@ -47,13 +47,11 @@
                                             <input id="cliente" class="span12" type="text" name="cliente" value="" />
                                             <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="" />
                                         </div>
-                                        <div class="span6">
+                                        <div class="span3">
                                             <label for="tecnico">Técnico / Responsável<span class="required">*</span></label>
                                             <input id="tecnico" class="span12" type="text" name="tecnico" value="<?= $this->session->userdata('nome'); ?>" />
                                             <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value="<?= $this->session->userdata('id'); ?>" />
                                         </div>
-                                    </div>
-                                    <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span3">
                                             <label for="status">Status<span class="required">*</span></label>
                                             <select class="span12" name="status" id="status" value="">
@@ -66,36 +64,34 @@
                                                 <option value="Aprovado">Aprovado</option>
                                             </select>
                                         </div>
-                                        <div class="span3">
+                                    </div>
+                                    <div class="span12" style="padding: 1%; margin-left: 0">
+                                        <div class="span2">
                                             <label for="modelo">Modelo<span></span></label>
                                             <input id="modelo" class="span12" type="text" name="modelo" value="" />
                                         </div>
-                                        <div class="span3">
+                                        <div class="span1">
                                             <label for="placa">Placa<span></span></label>
                                             <input id="placa" class="span12" type="text" name="placa" value="" />
                                         </div>
-                                        <div class="span3">
-                                            <label for="ano">Ano<span></span></label>
-                                            <input id="ano" class="span12" type="text" name="ano" />
-                                        </div>
-                                    </div>
-                                    <div class="span12" style="padding: 1%; margin-left: 0">
-                                        <div class="span3">
-                                            <label for="quilometragem">(KM)Quilometragem<span></span></label>
+                                        <div class="span2">
+                                            <label for="km">(KM)Quilometragem<span></span></label>
                                             <input id="km" class="span12" type="text" name="km" />
                                         </div>
-                                        <div class="span3">
+                                        <div class="span1">
                                             <label for="dataInicial">Data Inicial<span class="required">*</span></label>
                                             <input id="dataInicial" autocomplete="off" class="span12 datepicker" type="text" name="dataInicial" value="<?php echo date('d/m/Y'); ?>" />
                                         </div>
-                                        <div class="span3">
+                                        <div class="span1">
                                             <label for="dataFinal">Data Final<span class="required">*</span></label>
                                             <input id="dataFinal" autocomplete="off" class="span12 datepicker" type="text" name="dataFinal" value="" />
                                         </div>
-                                        <div class="span3">
+                                        <div class="span1">
                                             <label for="garantia">Garantia (dias)</label>
                                             <input id="garantia" type="number" min="0" max="9999" class="span12" name="garantia" value="" />
                                             <?php echo form_error('garantia'); ?>
+                                        </div>
+                                        <div class="span4">
                                             <label for="termoGarantia">Termo Garantia</label>
                                             <input id="termoGarantia" class="span12" type="text" name="termoGarantia" value="" />
                                             <input id="garantias_id" class="span12" type="hidden" name="garantias_id" value="" />
@@ -217,8 +213,6 @@
         $('#placa').on('input', function () {
             this.value = this.value.toUpperCase();
         });
-        // Máscara para o ano do carro (apenas 4 dígitos)
-        $('#ano').mask('0000');
         // Máscara para quilometragem com separador de milhar (ex: 123.456)
         $('#km').mask('000.000.000', {reverse: true});
         $('.editor').trumbowyg({
