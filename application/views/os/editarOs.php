@@ -570,6 +570,9 @@
                 vencimento: {
                     required: true
                 }
+                modelo: { 
+                    required: true
+                }
 
             },
             messages: {
@@ -584,7 +587,10 @@
                 },
                 vencimento: {
                     required: 'Campo Requerido.'
-                }
+                },
+                modelo: { 
+                    required: 'Campo Requerido.' 
+                } 
             },
             submitHandler: function(form) {
                 var dados = $(form).serialize();
@@ -1070,6 +1076,11 @@
         $('.editor').trumbowyg({
             lang: 'pt_br'
         });
+        // Máscara para quilometragem com separador de milhar (ex: 123.456)
+        $('#km').mask('000.000', {reverse: true});
+        $('.editor').trumbowyg({
+            lang: 'pt_br'
+        });
         $('#placa').mask('SSS-0000', {
             translation: {
                 'S': { pattern: /[A-Za-z]/ },
@@ -1079,6 +1090,7 @@
         $('#placa').on('input', function () {
             this.value = this.value.toUpperCase();
         });
+        $('#km').trigger('input');
         // Máscara para quilometragem com separador de milhar (ex: 123.456)
         $('#km').mask('000.000', {reverse: true});
         $('.editor').trumbowyg({

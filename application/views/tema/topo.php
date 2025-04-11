@@ -4,7 +4,7 @@
 <head>
   <title><?= $configuration['app_name'] ?: 'Map-OS' ?></title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <link rel="shortcut icon" type="image/png" href="<?= base_url(); ?>assets/img/favicon.png" />
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap-responsive.min.css" />
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/fullcalendar.css" />
   <?php if ($configuration['app_theme'] == 'white') { ?>
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/tema.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/custom.css" />
   <?php } ?>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="<?= base_url(); ?>assets/js/jquery-1.12.4.min.js"></script>

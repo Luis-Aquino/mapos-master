@@ -187,6 +187,11 @@ $config = [
             'rules' => 'trim|required',
         ],
         [
+            'field' => 'cliente',
+            'label' => 'Cliente',
+            'rules' => 'required'
+        ],
+        [
             'field' => 'garantia',
             'label' => 'Garantia',
             'rules' => 'trim|numeric',

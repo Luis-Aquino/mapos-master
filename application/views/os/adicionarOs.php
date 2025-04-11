@@ -70,7 +70,7 @@
                                             <label for="modelo">Modelo<span class="required">*</span></label>
                                             <input id="modelo" class="span12" type="text" name="modelo" value="" />
                                         </div>
-                                        <div class="span1">
+                                        <div class="span2">
                                             <label for="placa">Placa<span></span></label>
                                             <input id="placa" class="span12" type="text" name="placa" value="" />
                                         </div>
@@ -78,24 +78,26 @@
                                             <label for="km">(KM)Quilometragem<span></span></label>
                                             <input id="km" class="span12" type="text" name="km" />
                                         </div>
-                                        <div class="span1">
+                                        <div class="span2">
                                             <label for="dataInicial">Data Inicial<span class="required">*</span></label>
                                             <input id="dataInicial" autocomplete="off" class="span12 datepicker" type="text" name="dataInicial" value="<?php echo date('d/m/Y'); ?>" />
                                         </div>
-                                        <div class="span1">
+                                        <div class="span2">
                                             <label for="dataFinal">Data Final<span class="required">*</span></label>
                                             <input id="dataFinal" autocomplete="off" class="span12 datepicker" type="text" name="dataFinal" value="" />
                                         </div>
-                                        <div class="span1">
+                                        <div class="span2">
                                             <label for="garantia">Garantia (dias)</label>
                                             <input id="garantia" type="number" min="0" max="9999" class="span12" name="garantia" value="" />
                                             <?php echo form_error('garantia'); ?>
                                         </div>
+                                    <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span4">
                                             <label for="termoGarantia">Termo Garantia</label>
                                             <input id="termoGarantia" class="span12" type="text" name="termoGarantia" value="" />
                                             <input id="garantias_id" class="span12" type="hidden" name="garantias_id" value="" />
                                         </div>
+                                    </div>
                                     </div>
                                     <div class="span6" style="padding: 1%; margin-left: 0">
                                         <label for="descricaoProduto">
@@ -174,6 +176,9 @@
                 },
                 dataFinal: {
                     required: true
+                },
+                modelo: { 
+                    required: true
                 }
 
             },
@@ -189,7 +194,10 @@
                 },
                 dataFinal: {
                     required: 'Campo Requerido.'
-                }
+                },
+                modelo: { 
+                    required: 'Campo Requerido.' 
+                } 
             },
             errorClass: "help-inline",
             errorElement: "span",

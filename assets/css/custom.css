@@ -64,3 +64,24 @@
 .modal-body .control-group .help-inline {
     margin-bottom: 8px!important;
 }
+
+html, body {
+    font-size: 16px; /* ou 18px, 20px — o que achar melhor */
+}
+  
+@media (max-width: 768px) {
+    body,
+    p,
+    span,
+    label,
+    th,
+    td,
+    a,
+    div,
+    input,
+    select,
+    button,
+    textarea {
+      font-size: 15px !important;
+    }
+}
