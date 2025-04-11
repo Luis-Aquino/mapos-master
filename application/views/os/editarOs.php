@@ -569,7 +569,7 @@
                 },
                 vencimento: {
                     required: true
-                }
+                },
                 modelo: { 
                     required: true
                 }
@@ -1089,12 +1089,6 @@
         });
         $('#placa').on('input', function () {
             this.value = this.value.toUpperCase();
-        });
-        $('#km').trigger('input');
-        // Máscara para quilometragem com separador de milhar (ex: 123.456)
-        $('#km').mask('000.000', {reverse: true});
-        $('.editor').trumbowyg({
-            lang: 'pt_br'
         });
     });
 </script>
