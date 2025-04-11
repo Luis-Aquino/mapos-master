@@ -3,6 +3,9 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="<?php echo base_url() ?>assets/js/sweetalert2.all.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.mask.min.js"></script>
+<link rel="stylesheet" href="<?= base_url(); ?>assets/trumbowyg/ui/trumbowyg.css">
+<script src="<?= base_url(); ?>assets/trumbowyg/trumbowyg.js"></script>
+<script src="<?= base_url(); ?>assets/trumbowyg/langs/pt_br.js"></script>
 
 <div class="span12" style="margin-left: 0">
     <form method="get" action="<?php echo base_url(); ?>index.php/os/gerenciar">

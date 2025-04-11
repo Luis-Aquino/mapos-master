@@ -338,10 +338,9 @@
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.editor').trumbowyg({
-            lang: 'pt_br'
-        });
+
+    $('.editor').trumbowyg({
+        lang: 'pt_br'
     });
 
     $(document).on('click', '.anexo', function(event) {

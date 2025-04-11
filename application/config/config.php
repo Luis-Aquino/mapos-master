@@ -39,7 +39,7 @@ $config['app_subname'] = 'Sistema de Controle de Ordens de Serviço';
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.15.3/mapos-master/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
